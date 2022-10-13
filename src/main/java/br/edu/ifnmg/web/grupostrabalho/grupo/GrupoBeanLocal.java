@@ -14,5 +14,17 @@ public interface GrupoBeanLocal {
 
     List<Object[]> findLiderENomeGrupoByQuery();
 
+    List<Grupo> findGruposNaoAtivosByQuery();
+
+    List<Grupo> consuta14ByQuery(String nomeLider);
+
+    List<Object[]> consulta15ByQuery(String nomeMembro);
+
+    List<Grupo> consulta16ByQuery(String str);
+
+    List<Object[]> consulta17ByQuery();
+
+    List<Object[]> consulta18ByQuery(long qtd);
+
     
 }

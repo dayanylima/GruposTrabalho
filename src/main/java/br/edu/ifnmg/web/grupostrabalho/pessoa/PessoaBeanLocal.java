@@ -51,4 +51,14 @@ public interface PessoaBeanLocal {
 
     List<Pessoa> consulta7ByQuery(LocalDate beginDate, LocalDate endDate);
 
+    List<Pessoa> consulta8AByQuery();
+
+    List<Pessoa> consulta8BByQuery();
+
+    List<Pessoa> consulta9ByQuery();
+
+    List<Pessoa> Consulta10ByQuery();
+
+    List<Pessoa> consulta13ByQuery(String nomeGrupo);
+
 }

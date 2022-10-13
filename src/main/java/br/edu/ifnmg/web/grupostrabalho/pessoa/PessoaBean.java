@@ -148,4 +148,38 @@ public class PessoaBean implements PessoaBeanLocal {
         return (List<Pessoa>) q.getResultList();
     }
 
+    @Override
+    public List<Pessoa> consulta8AByQuery() {
+        Query q = entityManager.createQuery("SELECT DISTINCT p FROM Pessoa p, IN (p.telefones) t "
+                + "WHERE t.ddd=41 OR t.ddd=42 OR t.ddd=43 OR t.ddd=44 OR t.ddd=45 OR t.ddd=46");
+        return (List<Pessoa>) q.getResultList();
+    }
+
+    @Override
+    public List<Pessoa> consulta8BByQuery() {
+        Query q = entityManager.createQuery("SELECT DISTINCT p FROM Pessoa p, IN (p.telefones) t "
+                + "WHERE t.ddd=21 OR t.ddd=22 OR t.ddd=24");
+        return (List<Pessoa>) q.getResultList();
+    }
+
+    @Override
+    public List<Pessoa> consulta9ByQuery() {
+        Query q = entityManager.createQuery("SELECT p FROM Pessoa p WHERE p.telefones IS EMPTY");
+        return (List<Pessoa>) q.getResultList();
+    }
+
+    @Override
+    public List<Pessoa> Consulta10ByQuery() {
+        Query q = entityManager.createQuery("SELECT p.nome, count(t.id) FROM Pessoa p, IN (p.telefones) t GROUP BY p.nome");
+        return (List<Pessoa>) q.getResultList();
+    }
+
+    @Override
+    public List<Pessoa> consulta13ByQuery(String nomeGrupo) {
+         Query q = entityManager.createQuery("SELECT p.nome FROM Pessoa p JOIN p.atuacoes a WHERE a.grupo.nome =:nomeGrupo ORDER BY p.nome DESC").setParameter("nomeGrupo", nomeGrupo);
+        return (List<Pessoa>) q.getResultList();
+    }
+    
+    
+    
 }

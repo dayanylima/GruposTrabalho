@@ -171,30 +171,35 @@ public class Relatorios extends HttpServlet {
             //</editor-fold>
 
             //<editor-fold defaultstate="collapsed" desc="Consulta 8">
-            sb.append("<h2> </h>");
+            sb.append("<h2>Consulta 8.A: Quais pessoas (dados completos) têm telefone do estado do Paraná?</h>");
             sb.append("<pre>");
-            //sb.append(Util.toJson());
+            sb.append(Util.toJson(pessoaBean.consulta8AByQuery()));
+            sb.append("</pre>");
+
+            sb.append("<h2>Consulta 8.B: Quais pessoas (dados completos) têm telefone do estado do Rio de Janeiro?</h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(pessoaBean.consulta8BByQuery()));
             sb.append("</pre>");
             //</editor-fold>
 
             //<editor-fold defaultstate="collapsed" desc="Consulta 9">
-            sb.append("<h2> </h>");
+            sb.append("<h2>Consulta 9: Quais pessoas (dados completos) não possuem telefone?</h>");
             sb.append("<pre>");
-            //sb.append(Util.toJson());
+            sb.append(Util.toJson(pessoaBean.consulta9ByQuery()));
             sb.append("</pre>");
             //</editor-fold>
 
             //<editor-fold defaultstate="collapsed" desc="Consulta 10">
-            sb.append("<h2> </h>");
+            sb.append("<h2>Consulta 10: Quantos telefones cada pessoa (nome) tem?</h>");
             sb.append("<pre>");
-            // sb.append(Util.toJson());
+            sb.append(Util.toJson(pessoaBean.Consulta10ByQuery()));
             sb.append("</pre>");
             //</editor-fold>
 
             //<editor-fold defaultstate="collapsed" desc="Consulta 11">
             sb.append("<h2>Consulta 11: Quais grupos (dados completos) não estão ativos? </h>");
             sb.append("<pre>");
-            //sb.append(Util.toJson());
+            sb.append(Util.toJson(grupoBean.findGruposNaoAtivosByQuery()));
             sb.append("</pre>");
             //</editor-fold>
 
@@ -202,6 +207,69 @@ public class Relatorios extends HttpServlet {
             sb.append("<h2>Consulta 12: Quais são os líderes (nomes) dos grupos (nomes)? </h>");
             sb.append("<pre>");
             sb.append(Util.toJson(grupoBean.findLiderENomeGrupoByQuery()));
+            sb.append("</pre>");
+            //</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Consulta 13">
+            sb.append("<h2>Consulta 13: Quais são os membros (nomes) do grupo com nome \"Estudo IV\" com ordenação alfabética inversa?</h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(pessoaBean.consulta13ByQuery("Estudo IV")));
+            sb.append("</pre>");
+            //</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Consulta 14">
+            sb.append("<h2>Consulta 14: Quais são os grupos (dados completos) liderados por \"Beatriz Yana\"?</h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(grupoBean.consuta14ByQuery("Beatriz Yana")));
+            sb.append("</pre>");
+            //</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Consulta 15">
+            sb.append("<h2>Consulta 15: Quais são as datas de início e de término da atuação e os grupos (nomes) nos quais \"Cecília Xerxes\" é membro?</h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(grupoBean.consulta15ByQuery("Cecília Xerxes")));
+            sb.append("</pre>");
+            //</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Consulta 16">
+            sb.append("<h2>Consulta 16: Quais são os grupos (dados completos) que contêm \"II\" em seus nomes?</h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(grupoBean.consulta16ByQuery("II")));
+            sb.append("</pre>");
+            //</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Consulta 17">
+            sb.append("<h2>Consulta 17: Quais são os grupos (nomes) e os respectivos totais de membros distintos já alocados?</h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(grupoBean.consulta17ByQuery()));
+            sb.append("</pre>");
+            //</editor-fold>
+            
+            //<editor-fold defaultstate="collapsed" desc="Consulta xx">
+            sb.append("<h2>Consulta 18: Quais grupos (nomes) têm 3 ou mais atuações de membros e quanto são esses totais de atuações?</h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(grupoBean.consulta18ByQuery(3L)));
+            sb.append("</pre>");
+            //</editor-fold>
+            
+            //<editor-fold defaultstate="collapsed" desc="Consulta xx">
+            sb.append("<h2> </h>");
+            sb.append("<pre>");
+            //sb.append(Util.toJson());
+            sb.append("</pre>");
+            //</editor-fold>
+            
+            //<editor-fold defaultstate="collapsed" desc="Consulta xx">
+            sb.append("<h2> </h>");
+            sb.append("<pre>");
+            //sb.append(Util.toJson());
+            sb.append("</pre>");
+            //</editor-fold>
+            
+            //<editor-fold defaultstate="collapsed" desc="Consulta xx">
+            sb.append("<h2> </h>");
+            sb.append("<pre>");
+            //sb.append(Util.toJson());
             sb.append("</pre>");
             //</editor-fold>
 

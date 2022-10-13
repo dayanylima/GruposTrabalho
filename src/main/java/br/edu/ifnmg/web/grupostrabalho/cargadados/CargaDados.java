@@ -137,8 +137,18 @@ public class CargaDados implements CargaDadosLocal {
         a1.setTermino(LocalDate.of(2021, Month.NOVEMBER, 11));
         a1.setGrupo(g1);
         a1.setPessoa(p1);
-
+        
         p1.getAtuacoes().add(a1);
+        g1.getAtuacoes().add(a1);
+        
+        Atuacao a = new Atuacao();
+        a.setInicio(LocalDate.of(2012, Month.JANUARY, 1));
+        a.setTermino(LocalDate.of(2022, Month.NOVEMBER, 11));
+        a.setGrupo(g1);
+        a.setPessoa(p1);
+        
+        p1.getAtuacoes().add(a);
+        g1.getAtuacoes().add(a);
 
         Atuacao a2 = new Atuacao();
         a2.setInicio(LocalDate.of(2012, Month.JANUARY, 2));
@@ -147,6 +157,7 @@ public class CargaDados implements CargaDadosLocal {
         a2.setPessoa(p2);
         
         p2.getAtuacoes().add(a2);
+        g1.getAtuacoes().add(a2);
 
         Atuacao a3 = new Atuacao();
         a3.setInicio(LocalDate.of(2013, Month.JANUARY, 3));
@@ -155,6 +166,7 @@ public class CargaDados implements CargaDadosLocal {
         a3.setPessoa(p3);
         
         p3.getAtuacoes().add(a3);
+        g1.getAtuacoes().add(a3);
 
         Atuacao a4 = new Atuacao();
         a4.setInicio(LocalDate.of(2014, Month.JANUARY, 4));
@@ -163,6 +175,7 @@ public class CargaDados implements CargaDadosLocal {
         a4.setPessoa(p4);
         
         p4.getAtuacoes().add(a4);
+        g1.getAtuacoes().add(a4);
         //</editor-fold>
 
         //<editor-fold defaultstate="collapsed" desc="Estudo II">
@@ -177,6 +190,7 @@ public class CargaDados implements CargaDadosLocal {
         a5.setPessoa(p2);
         
         p2.getAtuacoes().add(a5);
+        g2.getAtuacoes().add(a5);
 
         Atuacao a6 = new Atuacao();
         a6.setInicio(LocalDate.of(2012, Month.JANUARY, 2));
@@ -184,7 +198,7 @@ public class CargaDados implements CargaDadosLocal {
         a6.setPessoa(p4);
         
         p4.getAtuacoes().add(a6);
-
+        g2.getAtuacoes().add(a6);
         //</editor-fold>
         
         //<editor-fold defaultstate="collapsed" desc="Estudo III">
@@ -200,6 +214,7 @@ public class CargaDados implements CargaDadosLocal {
         a7.setPessoa(p3);
         
         p3.getAtuacoes().add(a7);
+        g3.getAtuacoes().add(a7);
         
         Atuacao a8 = new Atuacao();
         a8.setInicio(LocalDate.of(2012, Month.JANUARY, 3));
@@ -208,7 +223,7 @@ public class CargaDados implements CargaDadosLocal {
         a8.setPessoa(p4);
         
         p4.getAtuacoes().add(a8);
-
+        g3.getAtuacoes().add(a8);
         //</editor-fold>
         
         //<editor-fold defaultstate="collapsed" desc="Estudo IV">
@@ -224,6 +239,7 @@ public class CargaDados implements CargaDadosLocal {
         a9.setPessoa(p2);
         
         p2.getAtuacoes().add(a9);
+        g4.getAtuacoes().add(a9);
        
         Atuacao a10 = new Atuacao();
         a10.setInicio(LocalDate.of(2012, Month.JANUARY, 4));
@@ -232,6 +248,7 @@ public class CargaDados implements CargaDadosLocal {
         a10.setPessoa(p3);
         
         p3.getAtuacoes().add(a10);
+        g4.getAtuacoes().add(a10);
         
         Atuacao a11 = new Atuacao();
         a11.setInicio(LocalDate.of(2012, Month.JANUARY, 4));
@@ -240,7 +257,7 @@ public class CargaDados implements CargaDadosLocal {
         a11.setPessoa(p4);
         
         p4.getAtuacoes().add(a11);
-        
+        g4.getAtuacoes().add(a11);
         //</editor-fold>
         
         
@@ -255,6 +272,7 @@ public class CargaDados implements CargaDadosLocal {
         pessoaBean.save(p4);
         
         atuacaoBean.save(a1);
+        atuacaoBean.save(a);
         atuacaoBean.save(a2);
         atuacaoBean.save(a3);
         atuacaoBean.save(a4);

@@ -38,6 +38,7 @@ public class Atuacao implements Serializable {
     
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "grupo_id")
+    @JsonbTransient
     private Grupo grupo;
 
     public Atuacao() {
