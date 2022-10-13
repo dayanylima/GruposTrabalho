@@ -3,12 +3,14 @@ package br.edu.ifnmg.web.grupostrabalho.grupo;
 import br.edu.ifnmg.web.grupostrabalho.pessoa.Pessoa;
 import java.io.Serializable;
 import javax.json.bind.annotation.JsonbTransient;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -27,8 +29,9 @@ public class Grupo implements Serializable {
 
     private Boolean ativo;
     
-    @OneToOne
-    @JoinColumn(name = "lider_pessoa_id")
+    @OneToOne(cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    @JoinColumn(name = "lider_id")
     @JsonbTransient
     private Pessoa lider;
 
@@ -74,8 +77,10 @@ public class Grupo implements Serializable {
 
     @Override
     public String toString() {
-        return "Grupo{" + "id=" + id + ", nome=" + nome + ", ativo=" + ativo + ", lider=" + lider + '}';
+        return "Grupo{" + "id=" + id + ", nome=" + nome + ", ativo=" + ativo + '}';
     }
+
+   
 
     
 }

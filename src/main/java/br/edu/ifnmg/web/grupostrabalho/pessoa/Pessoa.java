@@ -2,11 +2,13 @@ package br.edu.ifnmg.web.grupostrabalho.pessoa;
 
 import br.edu.ifnmg.web.grupostrabalho.atuacao.Atuacao;
 import br.edu.ifnmg.web.grupostrabalho.endereco.Endereco;
+import br.edu.ifnmg.web.grupostrabalho.grupo.Grupo;
 import br.edu.ifnmg.web.grupostrabalho.telefone.Telefone;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.json.bind.annotation.JsonbProperty;
 import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -31,7 +33,9 @@ import javax.persistence.Transient;
 @NamedQuery(name = "Pessoa.findNomeEndereco",query = "SELECT p.nome, p.endereco FROM Pessoa p"),
 @NamedQuery(name = "Pessoa.findNomeTelefones",query = "SELECT p.nome, t FROM Pessoa p JOIN p.telefones t"),
 @NamedQuery(name = "Pessoa.findPessoaQueMoramEmAvenida",query ="SELECT p from Pessoa p "
-                + "WHERE p.endereco.tipoLogradouro = 1")
+                + "WHERE p.endereco.tipoLogradouro = 1"),
+@NamedQuery(name = "Pessoa.findPessoaQueNaoMoramEmPraca",query ="SELECT p from Pessoa p "
+                + "WHERE NOT p.endereco.tipoLogradouro = 2")
 })
 public class Pessoa implements Serializable {
 
@@ -64,10 +68,16 @@ public class Pessoa implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "pessoa_id")
     private List<Atuacao> atuacoes;
+    
+    @OneToMany(mappedBy = "lider",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    private List<Grupo> liderancas;
 
     public Pessoa() {
         telefones = new ArrayList<>();
         atuacoes = new ArrayList<>();
+        liderancas = new ArrayList<>();
     }
 
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
@@ -132,12 +142,23 @@ public class Pessoa implements Serializable {
         this.atuacoes = atuacoes;
     }
 
+    public List<Grupo> getLiderancas() {
+        return liderancas;
+    }
+
+    public void setLiderancas(List<Grupo> liderancas) {
+        this.liderancas = liderancas;
+    }
+    
+    
     //</editor-fold>
 
     @Override
     public String toString() {
-        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", nascimento=" + nascimento + ", idade=" + idade + ", endereco=" + endereco + ", telefones=" + telefones + ", atuacoes=" + atuacoes + '}';
+        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", nascimento=" + nascimento + ", idade=" + idade + ", endereco=" + endereco + ", telefones=" + telefones + ", atuacoes=" + atuacoes + ", liderancas=" + liderancas + '}';
     }
+
+   
 
     
     

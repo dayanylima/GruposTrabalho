@@ -1,5 +1,6 @@
 package br.edu.ifnmg.web.grupostrabalho.pessoa;
 
+import java.time.LocalDate;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -77,7 +78,7 @@ public class PessoaBean implements PessoaBeanLocal {
         return entityManager.createNamedQuery("Pessoa.findNomeEndereco", Object[].class).getResultList();
     }
 //</editor-fold>
-    
+
     //<editor-fold defaultstate="collapsed" desc="Consulta 4">
     @Override
     public List<Pessoa> findPessoaQueMoramEmAvenidaQuery() {
@@ -93,12 +94,32 @@ public class PessoaBean implements PessoaBeanLocal {
                 + "WHERE p.endereco.tipoLogradouro = 1", Pessoa.class);
         return q.getResultList();
     }
-    
+
     @Override
     public List<Pessoa> findPessoaQueMoramEmAvenidaNamedQuery() {
         return entityManager.createNamedQuery("Pessoa.findPessoaQueMoramEmAvenida", Pessoa.class).getResultList();
     }
-    
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc="Consulta 5">
+    @Override
+    public List<Pessoa> findPessoasQueNaoMoramEmPracaQuery() {
+        Query q = entityManager.createQuery("SELECT p from Pessoa p "
+                + "WHERE NOT p.endereco.tipoLogradouro = 2");
+        return (List<Pessoa>) q.getResultList();
+    }
+
+    @Override
+    public List<Pessoa> findPessoasQueNaoMoramEmPracaTypedQuery() {
+        TypedQuery q = entityManager.createQuery("SELECT p from Pessoa p "
+                + "WHERE NOT p.endereco.tipoLogradouro = 2", Pessoa.class);
+        return q.getResultList();
+    }
+
+    @Override
+    public List<Pessoa> findPessoasQueNaoMoramEmPracaNamedQuery() {
+        return entityManager.createNamedQuery("Pessoa.findPessoaQueNaoMoramEmPraca", Pessoa.class).getResultList();
+    }
     //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="Consulta 6">
@@ -121,9 +142,10 @@ public class PessoaBean implements PessoaBeanLocal {
     }
     //</editor-fold>
 
+    @Override
+    public List<Pessoa> consulta7ByQuery(LocalDate beginDate, LocalDate endDate) {
+        Query q = entityManager.createQuery("SELECT p FROM Pessoa p WHERE p.nascimento BETWEEN :beginDate AND :endDate").setParameter("beginDate", beginDate).setParameter("endDate", endDate);
+        return (List<Pessoa>) q.getResultList();
+    }
 
-
-    
-
-   
 }

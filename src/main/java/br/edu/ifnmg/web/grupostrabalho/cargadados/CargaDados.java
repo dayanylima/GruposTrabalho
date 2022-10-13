@@ -244,7 +244,10 @@ public class CargaDados implements CargaDadosLocal {
         //</editor-fold>
         
         
-        
+        p1.getLiderancas().add(g1);
+        p2.getLiderancas().add(g2);
+        p2.getLiderancas().add(g4);
+        p3.getLiderancas().add(g3);
         
         pessoaBean.save(p1);
         pessoaBean.save(p2);

@@ -1,5 +1,6 @@
 package br.edu.ifnmg.web.grupostrabalho.pessoa;
 
+import java.time.LocalDate;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -36,11 +37,18 @@ public interface PessoaBeanLocal {
 
     List<Object[]> findNomeTelefoneNamedQuery();
 
-
     List<Pessoa> findPessoaQueMoramEmAvenidaQuery();
 
     List<Pessoa> findPessoaQueMoramEmAvenidaTypedQuery();
 
     List<Pessoa> findPessoaQueMoramEmAvenidaNamedQuery();
+
+    List<Pessoa> findPessoasQueNaoMoramEmPracaQuery();
+
+    List<Pessoa> findPessoasQueNaoMoramEmPracaTypedQuery();
+
+    List<Pessoa> findPessoasQueNaoMoramEmPracaNamedQuery();
+
+    List<Pessoa> consulta7ByQuery(LocalDate beginDate, LocalDate endDate);
 
 }
