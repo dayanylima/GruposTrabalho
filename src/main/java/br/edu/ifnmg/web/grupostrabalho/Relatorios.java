@@ -27,14 +27,10 @@ public class Relatorios extends HttpServlet {
     private PessoaBeanLocal pessoaBean;
 
     @Inject
-    private CargaDadosLocal cargaDadosBean;
-    
-    @Inject
     private GrupoBeanLocal grupoBean;
-    
+
     @Inject
     private AtuacaoBeanLocal atuacaoBean;
-    
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -66,17 +62,17 @@ public class Relatorios extends HttpServlet {
             //<editor-fold defaultstate="collapsed" desc="Consulta 1">
             sb.append("<h2>Consulta 1.A: Quais as pessoas (dados completos) cadastradas? Por meio de Query </h>");
             sb.append("<pre>");
-            //sb.append(Util.toJson(pessoaBean.findAllPessoaQuerry()));
+            sb.append(Util.toJson(pessoaBean.findAllPessoaQuerry()));
             sb.append("</pre>");
 
-            sb.append("<h2>Consulta 1.C: Quais as pessoas (dados completos) cadastradas? Por meio de TypedQuery </h>");
+            sb.append("<h2>Consulta 1.B: Quais as pessoas (dados completos) cadastradas? Por meio de TypedQuery </h>");
             sb.append("<pre>");
-            //sb.append(Util.toJson(pessoaBean.findAllPessoaTypedQuery()));
+            sb.append(Util.toJson(pessoaBean.findAllPessoaTypedQuery()));
             sb.append("</pre>");
 
             sb.append("<h2>Consulta 1.C: Quais as pessoas (dados completos) cadastradas? Por meio de NamedQuery </h>");
             sb.append("<pre>");
-            //sb.append(Util.toJson(pessoaBean.findAllPessoaNamedQuery()));
+            sb.append(Util.toJson(pessoaBean.findAllPessoaNamedQuery()));
             sb.append("</pre>");
             //</editor-fold>
 
@@ -117,20 +113,38 @@ public class Relatorios extends HttpServlet {
             //<editor-fold defaultstate="collapsed" desc="Consulta 4">
             sb.append("<h2>Consulta 4.A: Quais pessoas (dados completos) moram em avenidas? Por meio de Query </h>");
             sb.append("<pre>");
-            //sb.append(Util.toJson());
+            sb.append(Util.toJson(pessoaBean.findPessoaQueMoramEmAvenidaQuery()));
             sb.append("</pre>");
 
-            sb.append("<h2> </h>");
+            sb.append("<h2> Consulta 4.B: Quais pessoas (dados completos) moram em avenidas? Por meio de TypedQuery </h>");
             sb.append("<pre>");
-            //sb.append(Util.toJson();
+            sb.append(Util.toJson(pessoaBean.findPessoaQueMoramEmAvenidaTypedQuery()));
             sb.append("</pre>");
 
-            sb.append("<h2> </h>");
+            sb.append("<h2>Consulta 4.C: Quais pessoas (dados completos) moram em avenidas? Por meio de NamedQuery </h>");
             sb.append("<pre>");
-            //sb.append(Util.toJson());
+            sb.append(Util.toJson(pessoaBean.findPessoaQueMoramEmAvenidaNamedQuery()));
             sb.append("</pre>");
             //</editor-fold>
 
+            //<editor-fold defaultstate="collapsed" desc="Consulta 5">
+            sb.append("<h2>Consulta 4.A: Quais pessoas (dados completos) moram em avenidas? Por meio de Query </h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(pessoaBean.findPessoaQueMoramEmAvenidaQuery()));
+            sb.append("</pre>");
+
+            sb.append("<h2> Consulta 4.B: Quais pessoas (dados completos) moram em avenidas? Por meio de TypedQuery </h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(pessoaBean.findPessoaQueMoramEmAvenidaTypedQuery()));
+            sb.append("</pre>");
+
+            sb.append("<h2>Consulta 4.C: Quais pessoas (dados completos) moram em avenidas? Por meio de NamedQuery </h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(pessoaBean.findPessoaQueMoramEmAvenidaNamedQuery()));
+            sb.append("</pre>");
+
+            //</editor-fold>
+            
             //<editor-fold defaultstate="collapsed" desc="Consulta 6">
             sb.append("<h2>Consulta 6.A: Quais os nomes das pessoas e seus respectivos telefones (dados completos)? Por meio de Query </h>");
             sb.append("<pre>");
@@ -147,29 +161,28 @@ public class Relatorios extends HttpServlet {
             sb.append(Util.toJson(pessoaBean.findNomeTelefoneNamedQuery()));
             sb.append("</pre>");
             //</editor-fold>
-            
+
             //<editor-fold defaultstate="collapsed" desc="Consulta 9">
             sb.append("<h2> </h>");
             sb.append("<pre>");
             //sb.append(Util.toJson());
             sb.append("</pre>");
             //</editor-fold>
-            
+
             //<editor-fold defaultstate="collapsed" desc="Consulta 10">
             sb.append("<h2> </h>");
             sb.append("<pre>");
             // sb.append(Util.toJson());
             sb.append("</pre>");
             //</editor-fold>
-            
-            
+
             //<editor-fold defaultstate="collapsed" desc="Consulta 11">
             sb.append("<h2>Consulta 11: Quais grupos (dados completos) não estão ativos? </h>");
             sb.append("<pre>");
             //sb.append(Util.toJson());
             sb.append("</pre>");
             //</editor-fold>
-            
+
             //<editor-fold defaultstate="collapsed" desc="Consulta 12">
             sb.append("<h2>Consulta 12: Quais são os líderes (nomes) dos grupos (nomes)? </h>");
             sb.append("<pre>");

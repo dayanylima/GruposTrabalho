@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,7 +29,9 @@ import javax.persistence.Transient;
 @NamedQuery(name = "Pessoa.findAll",query = "SELECT p FROM Pessoa p"),
 @NamedQuery(name = "Pessoa.findNome",query = "SELECT p.nome FROM Pessoa p"),
 @NamedQuery(name = "Pessoa.findNomeEndereco",query = "SELECT p.nome, p.endereco FROM Pessoa p"),
-@NamedQuery(name = "Pessoa.findNomeTelefones",query = "SELECT p.nome, t FROM Pessoa p JOIN p.telefones t")
+@NamedQuery(name = "Pessoa.findNomeTelefones",query = "SELECT p.nome, t FROM Pessoa p JOIN p.telefones t"),
+@NamedQuery(name = "Pessoa.findPessoaQueMoramEmAvenida",query ="SELECT p from Pessoa p "
+                + "WHERE p.endereco.tipoLogradouro = 1")
 })
 public class Pessoa implements Serializable {
 
@@ -133,8 +136,10 @@ public class Pessoa implements Serializable {
 
     @Override
     public String toString() {
-        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", nascimento=" + nascimento + ", endereco=" + endereco + ", telefones=" + telefones + ", atuacoes=" + atuacoes + '}';
+        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", nascimento=" + nascimento + ", idade=" + idade + ", endereco=" + endereco + ", telefones=" + telefones + ", atuacoes=" + atuacoes + '}';
     }
+
+    
     
 
 }

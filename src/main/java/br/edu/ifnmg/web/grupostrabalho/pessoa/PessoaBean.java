@@ -77,6 +77,29 @@ public class PessoaBean implements PessoaBeanLocal {
         return entityManager.createNamedQuery("Pessoa.findNomeEndereco", Object[].class).getResultList();
     }
 //</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="Consulta 4">
+    @Override
+    public List<Pessoa> findPessoaQueMoramEmAvenidaQuery() {
+
+        Query q = entityManager.createQuery("SELECT p from Pessoa p "
+                + "WHERE p.endereco.tipoLogradouro = 1");
+        return (List<Pessoa>) q.getResultList();
+    }
+
+    @Override
+    public List<Pessoa> findPessoaQueMoramEmAvenidaTypedQuery() {
+        TypedQuery q = entityManager.createQuery("SELECT p from Pessoa p "
+                + "WHERE p.endereco.tipoLogradouro = 1", Pessoa.class);
+        return q.getResultList();
+    }
+    
+    @Override
+    public List<Pessoa> findPessoaQueMoramEmAvenidaNamedQuery() {
+        return entityManager.createNamedQuery("Pessoa.findPessoaQueMoramEmAvenida", Pessoa.class).getResultList();
+    }
+    
+    //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="Consulta 6">
     @Override
@@ -98,10 +121,9 @@ public class PessoaBean implements PessoaBeanLocal {
     }
     //</editor-fold>
 
-    @Override
-    public List<Object[]> findPessoasQueNaoPossuemTelefoneQuery() {
-      
-        return null;
-    }
 
+
+    
+
+   
 }

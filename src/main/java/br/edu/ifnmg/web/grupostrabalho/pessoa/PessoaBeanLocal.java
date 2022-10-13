@@ -36,6 +36,11 @@ public interface PessoaBeanLocal {
 
     List<Object[]> findNomeTelefoneNamedQuery();
 
-    List<Object[]> findPessoasQueNaoPossuemTelefoneQuery();
+
+    List<Pessoa> findPessoaQueMoramEmAvenidaQuery();
+
+    List<Pessoa> findPessoaQueMoramEmAvenidaTypedQuery();
+
+    List<Pessoa> findPessoaQueMoramEmAvenidaNamedQuery();
 
 }
