@@ -51,7 +51,7 @@ public class CargaDados implements CargaDadosLocal {
 
         Endereco e1 = new Endereco();
         e1.setLogradouro("1");
-        e1.setBairro("Bairro Humberto");
+        e1.setBairro("Humberto");
         e1.setTipoLogradouro(Endereco.TipoLogradouro.RUA);
         e1.setNumero(1111);
 
@@ -73,7 +73,7 @@ public class CargaDados implements CargaDadosLocal {
 
         Endereco e2 = new Endereco();
         e2.setLogradouro("2");
-        e2.setBairro("Bairro Doisberto");
+        e2.setBairro("Doisberto");
         e2.setTipoLogradouro(Endereco.TipoLogradouro.AVENIDA);
         e2.setNumero(2222);
 
@@ -89,7 +89,7 @@ public class CargaDados implements CargaDadosLocal {
         //<editor-fold defaultstate="collapsed" desc="Cecília Xerxes (p3)">
         Endereco e3 = new Endereco();
         e3.setLogradouro("3");
-        e3.setBairro("Bairro Trêsberto");
+        e3.setBairro("Trêsberto");
         e3.setTipoLogradouro(Endereco.TipoLogradouro.AVENIDA);
         e3.setNumero(3333);
 
@@ -112,7 +112,7 @@ public class CargaDados implements CargaDadosLocal {
 
         Endereco e4 = new Endereco();
         e4.setLogradouro("4");
-        e4.setBairro("Bairro Quatroberto");
+        e4.setBairro("Quatroberto");
         e4.setTipoLogradouro(Endereco.TipoLogradouro.PRACA);
         e4.setNumero(4444);
 

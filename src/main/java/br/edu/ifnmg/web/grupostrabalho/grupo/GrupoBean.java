@@ -1,8 +1,9 @@
 package br.edu.ifnmg.web.grupostrabalho.grupo;
-
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -19,5 +20,16 @@ public class GrupoBean implements GrupoBeanLocal {
         entityManager.persist(grupo);
     }
 
+    @Override
+    public List<Object[]> findLiderENomeGrupoByQuery() {
+       Query q = entityManager.createQuery("SELECT g.nome, l.nome FROM Grupo g JOIN g.lider l");
+        return (List<Object[]>) q.getResultList();
+    }
+
+ 
+    
+    
+    
+    
     
 }

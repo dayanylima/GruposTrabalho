@@ -26,7 +26,9 @@ import javax.persistence.Transient;
 @Table(name = "tbl_pessoa")
 @NamedQueries({
 @NamedQuery(name = "Pessoa.findAll",query = "SELECT p FROM Pessoa p"),
-@NamedQuery(name = "Pessoa.findNome",query = "SELECT p.nome FROM Pessoa p")    
+@NamedQuery(name = "Pessoa.findNome",query = "SELECT p.nome FROM Pessoa p"),
+@NamedQuery(name = "Pessoa.findNomeEndereco",query = "SELECT p.nome, p.endereco FROM Pessoa p"),
+@NamedQuery(name = "Pessoa.findNomeTelefones",query = "SELECT p.nome, t FROM Pessoa p JOIN p.telefones t")
 })
 public class Pessoa implements Serializable {
 
@@ -128,11 +130,11 @@ public class Pessoa implements Serializable {
     }
 
     //</editor-fold>
+
     @Override
     public String toString() {
-        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", email=" + email 
-                + ", nascimento=" + nascimento + ", idade=" + idade + ", endereco=" + endereco + 
-                  ", telefones=" + telefones + ", atuacoes=" + atuacoes + '}';
+        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", nascimento=" + nascimento + ", endereco=" + endereco + ", telefones=" + telefones + ", atuacoes=" + atuacoes + '}';
     }
+    
 
 }

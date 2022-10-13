@@ -24,6 +24,18 @@ public interface PessoaBeanLocal {
 
     List<Object[]> findNomeNamedQuery();
 
-   
-    
+    List<Pessoa> fiindNomeEnderecoQuery();
+
+    List<Object[]> fiindNomeEnderecoTypedQuery();
+
+    List<Object[]> fiindNomeEnderecoNamedQuery();
+
+    List<Object[]> findNomeTelefoneQuery();
+
+    List<Object[]> findNomeTelefoneTypedQuery();
+
+    List<Object[]> findNomeTelefoneNamedQuery();
+
+    List<Object[]> findPessoasQueNaoPossuemTelefoneQuery();
+
 }
