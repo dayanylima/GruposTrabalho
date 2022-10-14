@@ -176,10 +176,8 @@ public class PessoaBean implements PessoaBeanLocal {
 
     @Override
     public List<Pessoa> consulta13ByQuery(String nomeGrupo) {
-         Query q = entityManager.createQuery("SELECT p.nome FROM Pessoa p JOIN p.atuacoes a WHERE a.grupo.nome =:nomeGrupo ORDER BY p.nome DESC").setParameter("nomeGrupo", nomeGrupo);
+        Query q = entityManager.createQuery("SELECT p.nome FROM Pessoa p JOIN p.atuacoes a WHERE a.grupo.nome =:nomeGrupo ORDER BY p.nome DESC").setParameter("nomeGrupo", nomeGrupo);
         return (List<Pessoa>) q.getResultList();
     }
-    
-    
-    
+
 }

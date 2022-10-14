@@ -35,7 +35,7 @@ public class Atuacao implements Serializable {
     @JoinColumn(name = "pessoa_id")
     @JsonbTransient
     private Pessoa pessoa;
-    
+
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "grupo_id")
     @JsonbTransient
@@ -86,12 +86,10 @@ public class Atuacao implements Serializable {
     }
 
     //</editor-fold>
-
     @Override
     public String toString() {
-        return "Atuacao{" + "id=" + id + ", inicio=" + inicio + 
-               ", termino=" + termino + ", grupo=" + grupo + '}';
+        return "Atuacao{" + "id=" + id + ", inicio=" + inicio
+                + ", termino=" + termino + ", grupo=" + grupo + '}';
     }
-    
-    
+
 }

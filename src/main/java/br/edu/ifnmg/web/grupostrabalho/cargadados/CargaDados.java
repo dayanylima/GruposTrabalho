@@ -63,9 +63,8 @@ public class CargaDados implements CargaDadosLocal {
         p1.getTelefones().add(t1);
         p1.getTelefones().add(t2);
         p1.getTelefones().add(t3);
-
         //</editor-fold>
-        
+
         //<editor-fold defaultstate="collapsed" desc="Beatriz Yana (p2)">
         Telefone t4 = new Telefone();
         t4.setDdd((byte) 22);
@@ -83,9 +82,8 @@ public class CargaDados implements CargaDadosLocal {
         p2.setNascimento(LocalDate.of(2002, Month.FEBRUARY, 2));
         p2.setEndereco(e2);
         p2.getTelefones().add(t4);
-
         //</editor-fold>
-        
+
         //<editor-fold defaultstate="collapsed" desc="Cecília Xerxes (p3)">
         Endereco e3 = new Endereco();
         e3.setLogradouro("3");
@@ -98,9 +96,8 @@ public class CargaDados implements CargaDadosLocal {
         p3.setEmail("cecilia@mail.com");
         p3.setNascimento(LocalDate.of(2003, Month.MARCH, 3));
         p3.setEndereco(e3);
-
         //</editor-fold>
-        
+
         //<editor-fold defaultstate="collapsed" desc="Débora Wendel (p4)">
         Telefone t5 = new Telefone();
         t5.setDdd((byte) 44);
@@ -123,9 +120,8 @@ public class CargaDados implements CargaDadosLocal {
         p4.setEndereco(e4);
         p4.getTelefones().add(t5);
         p4.getTelefones().add(t6);
-
         //</editor-fold>
-        
+
         //<editor-fold defaultstate="collapsed" desc="Estudo I">
         Grupo g1 = new Grupo();
         g1.setAtivo(false);
@@ -137,16 +133,16 @@ public class CargaDados implements CargaDadosLocal {
         a1.setTermino(LocalDate.of(2021, Month.NOVEMBER, 11));
         a1.setGrupo(g1);
         a1.setPessoa(p1);
-        
+
         p1.getAtuacoes().add(a1);
         g1.getAtuacoes().add(a1);
-        
+
         Atuacao a = new Atuacao();
         a.setInicio(LocalDate.of(2012, Month.JANUARY, 1));
         a.setTermino(LocalDate.of(2022, Month.NOVEMBER, 11));
         a.setGrupo(g1);
         a.setPessoa(p1);
-        
+
         p1.getAtuacoes().add(a);
         g1.getAtuacoes().add(a);
 
@@ -155,7 +151,7 @@ public class CargaDados implements CargaDadosLocal {
         a2.setTermino(LocalDate.of(2021, Month.JANUARY, 12));
         a2.setGrupo(g1);
         a2.setPessoa(p2);
-        
+
         p2.getAtuacoes().add(a2);
         g1.getAtuacoes().add(a2);
 
@@ -164,7 +160,7 @@ public class CargaDados implements CargaDadosLocal {
         a3.setTermino(LocalDate.of(2021, Month.JANUARY, 13));
         a3.setGrupo(g1);
         a3.setPessoa(p3);
-        
+
         p3.getAtuacoes().add(a3);
         g1.getAtuacoes().add(a3);
 
@@ -173,7 +169,7 @@ public class CargaDados implements CargaDadosLocal {
         a4.setTermino(LocalDate.of(2021, Month.JANUARY, 14));
         a4.setGrupo(g1);
         a4.setPessoa(p4);
-        
+
         p4.getAtuacoes().add(a4);
         g1.getAtuacoes().add(a4);
         //</editor-fold>
@@ -188,7 +184,7 @@ public class CargaDados implements CargaDadosLocal {
         a5.setInicio(LocalDate.of(2012, Month.JANUARY, 2));
         a5.setGrupo(g2);
         a5.setPessoa(p2);
-        
+
         p2.getAtuacoes().add(a5);
         g2.getAtuacoes().add(a5);
 
@@ -196,81 +192,80 @@ public class CargaDados implements CargaDadosLocal {
         a6.setInicio(LocalDate.of(2012, Month.JANUARY, 2));
         a6.setGrupo(g2);
         a6.setPessoa(p4);
-        
+
         p4.getAtuacoes().add(a6);
         g2.getAtuacoes().add(a6);
         //</editor-fold>
-        
+
         //<editor-fold defaultstate="collapsed" desc="Estudo III">
         Grupo g3 = new Grupo();
         g3.setAtivo(false);
         g3.setNome("Estudo III");
         g3.setLider(p3);
-        
+
         Atuacao a7 = new Atuacao();
         a7.setInicio(LocalDate.of(2012, Month.JANUARY, 3));
         a7.setTermino(LocalDate.of(2023, Month.JANUARY, 13));
         a7.setGrupo(g3);
         a7.setPessoa(p3);
-        
+
         p3.getAtuacoes().add(a7);
         g3.getAtuacoes().add(a7);
-        
+
         Atuacao a8 = new Atuacao();
         a8.setInicio(LocalDate.of(2012, Month.JANUARY, 3));
         a8.setTermino(LocalDate.of(2023, Month.JANUARY, 13));
         a8.setGrupo(g3);
         a8.setPessoa(p4);
-        
+
         p4.getAtuacoes().add(a8);
         g3.getAtuacoes().add(a8);
         //</editor-fold>
-        
+
         //<editor-fold defaultstate="collapsed" desc="Estudo IV">
         Grupo g4 = new Grupo();
         g4.setAtivo(true);
         g4.setNome("Estudo IV");
         g4.setLider(p2);
-        
+
         Atuacao a9 = new Atuacao();
         a9.setInicio(LocalDate.of(2012, Month.JANUARY, 4));
         a9.setTermino(LocalDate.of(2024, Month.JANUARY, 14));
         a9.setGrupo(g4);
         a9.setPessoa(p2);
-        
+
         p2.getAtuacoes().add(a9);
         g4.getAtuacoes().add(a9);
-       
+
         Atuacao a10 = new Atuacao();
         a10.setInicio(LocalDate.of(2012, Month.JANUARY, 4));
         a10.setTermino(LocalDate.of(2024, Month.JANUARY, 14));
         a10.setGrupo(g4);
         a10.setPessoa(p3);
-        
+
         p3.getAtuacoes().add(a10);
         g4.getAtuacoes().add(a10);
-        
+
         Atuacao a11 = new Atuacao();
         a11.setInicio(LocalDate.of(2012, Month.JANUARY, 4));
         a11.setTermino(LocalDate.of(2024, Month.JANUARY, 14));
         a11.setGrupo(g4);
         a11.setPessoa(p4);
-        
+
         p4.getAtuacoes().add(a11);
         g4.getAtuacoes().add(a11);
         //</editor-fold>
-        
-        
+
         p1.getLiderancas().add(g1);
         p2.getLiderancas().add(g2);
         p2.getLiderancas().add(g4);
         p3.getLiderancas().add(g3);
-        
+
         pessoaBean.save(p1);
         pessoaBean.save(p2);
         pessoaBean.save(p3);
         pessoaBean.save(p4);
-        
+
         atuacaoBean.save(a1);
         atuacaoBean.save(a);
         atuacaoBean.save(a2);
@@ -283,7 +278,7 @@ public class CargaDados implements CargaDadosLocal {
         atuacaoBean.save(a9);
         atuacaoBean.save(a10);
         atuacaoBean.save(a11);
-        
+
         grupoBean.save(g1);
         grupoBean.save(g2);
         grupoBean.save(g3);

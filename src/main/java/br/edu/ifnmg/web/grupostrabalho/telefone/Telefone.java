@@ -53,6 +53,5 @@ public class Telefone implements Serializable {
     public String toString() {
         return "Telefone{" + "id=" + id + ", ddd=" + ddd + ", numero=" + numero + '}';
     }
-    
-    
+
 }

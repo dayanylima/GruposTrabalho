@@ -1,10 +1,8 @@
 package br.edu.ifnmg.web.grupostrabalho.atuacao;
 
-import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 /**
  *
@@ -12,15 +10,13 @@ import javax.persistence.Query;
  */
 @Stateless
 public class AtuacaoBean implements AtuacaoBeanLocal {
-    
+
     @PersistenceContext
     private EntityManager entityManager;
-    
+
     @Override
-    public void save(Atuacao atuacao) {        
+    public void save(Atuacao atuacao) {
         entityManager.persist(atuacao);
     }
 
- 
-    
 }

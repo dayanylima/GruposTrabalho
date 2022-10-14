@@ -93,6 +93,4 @@ public class Grupo implements Serializable {
         return "Grupo{" + "id=" + id + ", nome=" + nome + ", ativo=" + ativo + ", lider=" + lider + ", atuacoes=" + atuacoes + '}';
     }
 
-   
-
 }

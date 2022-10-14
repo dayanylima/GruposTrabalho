@@ -1,5 +1,6 @@
 package br.edu.ifnmg.web.grupostrabalho.grupo;
 
+import java.time.LocalDate;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -26,5 +27,12 @@ public interface GrupoBeanLocal {
 
     List<Object[]> consulta18ByQuery(long qtd);
 
-    
+    List<Object[]> consulta19ByQuery(String nomeGrupo, LocalDate data);
+
+    List<Object[]> consulta20ByQuery(LocalDate data);
+
+    List<Object[]> consulta21ByQuery();
+
+    List<Object[]> consulta22ByQuery();
+
 }

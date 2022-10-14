@@ -1,6 +1,5 @@
 package br.edu.ifnmg.web.grupostrabalho;
 
-import br.edu.ifnmg.web.grupostrabalho.cargadados.CargaDadosLocal;
 import br.edu.ifnmg.web.grupostrabalho.grupo.GrupoBeanLocal;
 import br.edu.ifnmg.web.grupostrabalho.atuacao.AtuacaoBeanLocal;
 import br.edu.ifnmg.web.grupostrabalho.pessoa.PessoaBeanLocal;
@@ -19,7 +18,7 @@ import javax.transaction.Transactional;
 
 /**
  *
- * @author dayan
+ * @author dayany
  */
 @Transactional
 @WebServlet(name = "Relatorios", urlPatterns = {"/Relatorios"})
@@ -244,32 +243,39 @@ public class Relatorios extends HttpServlet {
             sb.append(Util.toJson(grupoBean.consulta17ByQuery()));
             sb.append("</pre>");
             //</editor-fold>
-            
-            //<editor-fold defaultstate="collapsed" desc="Consulta xx">
+
+            //<editor-fold defaultstate="collapsed" desc="Consulta 18">
             sb.append("<h2>Consulta 18: Quais grupos (nomes) têm 3 ou mais atuações de membros e quanto são esses totais de atuações?</h>");
             sb.append("<pre>");
             sb.append(Util.toJson(grupoBean.consulta18ByQuery(3L)));
             sb.append("</pre>");
             //</editor-fold>
-            
-            //<editor-fold defaultstate="collapsed" desc="Consulta xx">
-            sb.append("<h2> </h>");
+
+            //<editor-fold defaultstate="collapsed" desc="Consulta 19">
+            sb.append("<h2>Consulta 19: Quais membros (nomes) entraram a partir de 2012 no primeiro grupo?</h>");
             sb.append("<pre>");
-            //sb.append(Util.toJson());
+            sb.append(Util.toJson(grupoBean.consulta19ByQuery("Estudo I", LocalDate.of(2012, Month.JANUARY, 1))));
             sb.append("</pre>");
             //</editor-fold>
-            
-            //<editor-fold defaultstate="collapsed" desc="Consulta xx">
-            sb.append("<h2> </h>");
+
+            //<editor-fold defaultstate="collapsed" desc="Consulta 20">
+            sb.append("<h2>Consulta 20: Quais os grupos (nomes), membros (nomes) e as respectivas datas de entrada daqueles que entraram a partir de 2012 em qualquer grupo?</h>");
             sb.append("<pre>");
-            //sb.append(Util.toJson());
+            sb.append(Util.toJson(grupoBean.consulta20ByQuery(LocalDate.of(2012, Month.JANUARY, 1))));
             sb.append("</pre>");
             //</editor-fold>
-            
-            //<editor-fold defaultstate="collapsed" desc="Consulta xx">
-            sb.append("<h2> </h>");
+
+            //<editor-fold defaultstate="collapsed" desc="Consulta 21">
+            sb.append("<h2>Consulta 21: Quais os grupos (nomes) e respectivos membros (nomes) que não possuem data de término de atuação em seus grupos?</h>");
             sb.append("<pre>");
-            //sb.append(Util.toJson());
+            sb.append(Util.toJson(grupoBean.consulta21ByQuery()));
+            sb.append("</pre>");
+            //</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Consulta 22">
+            sb.append("<h2>Consulta 22: Quais são os grupos (nomes) e líderes (nomes) com respectivos membros(nomes)?</h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(grupoBean.consulta22ByQuery()));
             sb.append("</pre>");
             //</editor-fold>
 
